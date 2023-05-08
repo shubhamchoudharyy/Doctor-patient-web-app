@@ -15,7 +15,36 @@ const Layout = ({children}) => {
         navigate('/login')
     }
 
-    const sidebarMenu=user?.isAdmin ? adminMenu :userMenu
+    // ***********doctor menu ************
+        const doctorMenu=[
+        {
+            name:'Home',
+            path:'/',
+            icon:'fa-solid fa-house',
+        },
+        {
+            name:'Appointments',
+            path:'/appointmets',
+            icon:'fa-solid fa-list',
+        },
+       
+        {
+            name:'Profile',
+            path:`/doctor/profile/${user?._id}`,
+            icon:'fa-solid fa-user',
+        },
+        {
+            name:'Chat',
+            path:'/chat',
+            icon:'fa-light fa-user-doctor-message',
+        },
+       
+       
+       
+    ]
+    // **************doctor menu ***************
+
+    const sidebarMenu=user?.isAdmin ? adminMenu :user?.isDoctor ? doctorMenu :userMenu;
   return (
     <>
     <div className="main">

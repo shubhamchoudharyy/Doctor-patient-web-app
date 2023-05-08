@@ -111,4 +111,37 @@ const getAllNotificationController=async(req,res)=>{
         })
     }
 }
-module.exports={loginController,registerController,authController,applyDoctorController,getAllNotificationController}
+
+const deleteAllNotificationController=async(req,res)=>{
+    try{
+        const user=await userModel.findOne({_id:req.body.userId})
+        user.notification=[]
+        user.seennotification=[]
+        const updateUser=await user.save()
+        updateUser.password=undefined
+        res.status(200).send({
+            success:true,
+            message:'Notifications Deleted Successfully',
+            data:updateUser,
+        })
+    }catch(error){
+        console.log(error)
+        res.status(500).send({success:false,message:'unable to delete all notifications',error})
+    }
+
+}
+
+const getAllDoctorsController=async(req,res)=>{
+    try{
+        const doctors=await doctorModel.find({status:'approved'})
+        res.status(200).send({
+            success:true,
+            message:'Doctors List Fetched Successfully',
+            data:doctors
+        })
+    }catch(error){
+        console.log(error)
+        res.status(500).send({success:false,error,message:'Error while fetching documnets'})
+    }
+}
+module.exports={loginController,registerController,authController,applyDoctorController,getAllNotificationController,deleteAllNotificationController,getAllDoctorsController}
