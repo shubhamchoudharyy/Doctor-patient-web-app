@@ -1,13 +1,17 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import {Form, Input,message} from 'antd'
 import '../styles/RegisterStyles.css'
 import {Link, useNavigate} from 'react-router-dom'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import {showLoading,hideLoading} from '../redux/features/alertSlice'
 import axios from 'axios'
 const Login = () => {
   const dispatch=useDispatch()
   const navigate=useNavigate()
+  const {user}=useSelector((state)=>state.user)
+
+ 
+  
   const onfinishHandler=async(values)=>{
     try{
       dispatch(showLoading())
@@ -16,8 +20,9 @@ const Login = () => {
       dispatch(hideLoading())
       if(res.data.success){
         localStorage.setItem('token',res.data.token)
+        localStorage.setItem('chat-app-user',JSON.stringify(res.data.user))
         message.success('Login Succesfully')
-        navigate('/')
+        
         
       }else{
         message.error(res.data.message)

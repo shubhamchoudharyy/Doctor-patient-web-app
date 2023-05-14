@@ -1,25 +1,50 @@
 const mongoose=require('mongoose')
 
 const userSchema=new mongoose.Schema({
+    userId:{
+        type:String,
+        
+
+    },
+    username:{
+        type:String,
+        required:true,
+        min:3,
+        max:20,
+        unique:true,
+
+    },
     name:{
         type:String,
-        required:[true,'name is required']
+        required:true,
     },
     email:{
         type:String,
-        required:[true,'email is required']
+        required:true,
+        unique:true,
+        max:50,
+
     },
     password:{
         type:String,
-        required:[true,'password is required']
+        required:true,
+        min:8,
+    },
+    isAvatarImageSet :{
+        type:Boolean,
+        default:false,
+    },
+    avatarImage:{
+        type:String,
+        default:"",
     },
     height:{
         type:String,
-        required:[true,'height is required']
+        default:""
     },
     weight:{
         type:String,
-        required:[true,'weight is required']
+        default:''
     },
     isAdmin:{
         type:Boolean,

@@ -1,4 +1,5 @@
-import Layout from 'antd/es/layout/layout'
+// import Layout from 'antd/es/layout/layout'
+import Layout from '../components/Layout'
 import React from 'react'
 import {Col, Form, Input, Row,TimePicker,message} from 'antd'
 import { useNavigate } from 'react-router-dom'

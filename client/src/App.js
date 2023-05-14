@@ -2,8 +2,8 @@
 import './App.css';
 import {BrowserRouter,Routes,Route} from 'react-router-dom'
 import HomePage from './pages/HomePage';
-import Login from './pages/Login';
-import Register from './pages/Register';
+import Login from './pages/Login.js';
+import Register from './pages/Register.js';
 import Spinner from './components/Spinner'
 import { useSelector } from 'react-redux';
 import ProtectedRoutes from './components/ProtectedRoutes';
@@ -13,6 +13,15 @@ import NotificationPage from './pages/NotificationPage';
 import Users from './pages/admin/Users';
 import Doctors from './pages/admin/Doctors';
 import Profile from './pages/doctor/Profile';
+import BookingPage from './pages/BookingPage';
+import Appointments from './pages/Appointments';
+import DoctorAppointments from './pages/doctor/DoctorAppointments';
+import SetAvatar from './pages/SetAvatar';
+import Chat from './pages/Chat';
+import BmiCalculator from './pages/Bmi';
+import UserProfile from './pages/user/Profile';
+// import Underweight from './pages/underweight/Underweight';
+// import Overweight from './pages/overweight/Overweight';
 
 function App() {
   const {loading}=useSelector((state)=>state.alerts);
@@ -27,6 +36,34 @@ function App() {
       element={
       <ProtectedRoutes>
         <HomePage />
+      </ProtectedRoutes> } />
+
+      <Route path='/diet' 
+      element={
+      <ProtectedRoutes>
+        <BmiCalculator />
+      </ProtectedRoutes> } />
+
+      <Route path='/chat' 
+      element={
+      <ProtectedRoutes>
+        <Chat />
+      </ProtectedRoutes> } />
+
+      {/* <Route path='/user/menu' 
+      element={<ProtectedRoutes>
+        <Underweight />
+      </ProtectedRoutes>} />
+
+      <Route path='/user/menu2' 
+      element={<ProtectedRoutes>
+        <Overweight />
+      </ProtectedRoutes>} /> */}
+
+      <Route path='/setAvatar' 
+      element={
+      <ProtectedRoutes>
+        <SetAvatar />
       </ProtectedRoutes> } />
 
       <Route path='/apply-doctor' 
@@ -53,6 +90,19 @@ function App() {
         <Profile />
       </ProtectedRoutes> } />
 
+      <Route path='/user/profile/:id' 
+      element={
+      <ProtectedRoutes>
+        <UserProfile/>
+      </ProtectedRoutes> } />
+
+
+      <Route path='/doctor/book-appointment/:doctorId' 
+      element={
+      <ProtectedRoutes>
+        <BookingPage />
+      </ProtectedRoutes> } />
+
       <Route path='/notification' 
       element={
       <ProtectedRoutes>
@@ -64,6 +114,20 @@ function App() {
         <PublicRoute>
           <Register />
         </PublicRoute>
+       } />
+
+      <Route path='/appointments'
+       element={
+        <ProtectedRoutes>
+          <Appointments />
+        </ProtectedRoutes>
+       } />
+
+      <Route path='/doctor-appointments'
+       element={
+        <ProtectedRoutes>
+          <DoctorAppointments />
+        </ProtectedRoutes>
        } />
 
       <Route path='/login' 
