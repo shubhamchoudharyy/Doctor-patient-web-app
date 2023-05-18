@@ -58,47 +58,53 @@ const Profile = () => {
     },[])
   return (
     <Layout>
-      <h1>Manage Profile</h1>
-      {User && (
-        <Form layout='vertical' onFinish={handleFinish} className='m-3' initialValues={{
-            ...User,
-            
-        }}>
-        <h4 className=''>Personal Details</h4>
+        <div className="container emp-profile">
+            <form method="">
+                <div className="row">
+                    <div className="col-md-4">
+                        <img src={user.avatarImage} alt='avatar' />
+                    </div>
+                    <div className="col-md-6">
+                        <div className="profile-head">
+                            <h5>{user.name}</h5>
+                            <h5>{user.email}</h5>
 
-            <Row gutter={20}>
+                            <ul className='nav nav-tabs' role='tablist'>
+                                <li className='nav-item'>
+                                    <a className='nav-link active' href='#home' id='home-tab' data-toggle='tab' role='tab'>About</a>
+                                </li>
+                                <li className='nav-item'>
+                                    <a className='nav-link active' href='#profile' id='profile-tab' data-toggle='tab' role='tab'>Timeline</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div className="col-md-3">
+                        <input type='submit' className='profile-edit-btn' value='Edit Profile' name='btnAddMore'/> 
+                    </div>
+                    
+                </div>
                 
-                <Col xs={24} md={24} lg={8}>
-                    <Form.Item label='Avatar Image' name='avatarImage' required rules={[{required:true}]}>
-                        <Image   src={`${user.avatarImage}`}
-                                width={200}
-                                alt="Example Image"
-                                />
-                    </Form.Item>
-                </Col>
-                <Col xs={24} md={24} lg={8}>
-                    <Form.Item label='First Name' name='name' required rules={[{required:true}]}>
-                        <Input type='text' placeholder='your name' />
-                    </Form.Item>
-                </Col>
-               
-                
-                <Col xs={24} md={24} lg={8}>
-                    <Form.Item label='Email' name='email' required rules={[{required:true}]}>
-                        <Input type='email' placeholder='email' />
-                    </Form.Item>
-                </Col>
-                
-        
-                
-               
-                <Col xs={24} md={24} lg={8}></Col>
-                <Col xs={24} md={24} lg={8}>
-                <button className='btn btn-primary form-btn' type='submit'>Update</button>
-                </Col>
-            </Row>
-        </Form>
-      )}
+                <div className="row">
+                    <div className="col-md-4">
+                        <div className="profile-work">
+                            <p>Work Link</p>
+                            <a href='https://google.com' target='search'>Google</a> <br/>
+                            <a href='https://google.com' target='search'>Google</a> <br/>
+                            <a href='https://google.com' target='search'>Google</a> <br/>
+                            <a href='https://google.com' target='search'>Google</a> <br/>
+                        </div>
+                    </div>
+                    <div className="col-md-8 pl-5 about-info">
+                        <div className="tab-content profile-tab" id='myTabContent' >
+                            <div className="tab-pane fade show active" id='home' role='tabpanel' aria-labelledby='home-tab'></div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+     
     </Layout>
   )
 }

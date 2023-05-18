@@ -20,8 +20,8 @@ import SetAvatar from './pages/SetAvatar';
 import Chat from './pages/Chat';
 import BmiCalculator from './pages/Bmi';
 import UserProfile from './pages/user/Profile';
-// import Underweight from './pages/underweight/Underweight';
-// import Overweight from './pages/overweight/Overweight';
+import Underweight from './pages/underweight/Underweight';
+import Overweight from './pages/overweight/Overweight';
 
 function App() {
   const {loading}=useSelector((state)=>state.alerts);
@@ -50,15 +50,15 @@ function App() {
         <Chat />
       </ProtectedRoutes> } />
 
-      {/* <Route path='/user/menu' 
+      <Route path='/menu' 
       element={<ProtectedRoutes>
         <Underweight />
       </ProtectedRoutes>} />
 
-      <Route path='/user/menu2' 
+      <Route path='/menu2' 
       element={<ProtectedRoutes>
         <Overweight />
-      </ProtectedRoutes>} /> */}
+      </ProtectedRoutes>} />
 
       <Route path='/setAvatar' 
       element={

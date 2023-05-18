@@ -49,9 +49,10 @@ const HomePage = () => {
   
   return (
     <Layout >
-      <div className='card'>
+      
       <h1 className='text-right m-5'>Home Page</h1>
-      <Row>
+      <div className='card'>
+      <Row  className='doc'>
         {doctors && doctors.map((doctor)=><DoctorList doctor={doctor} />
        )}
       </Row>
@@ -60,6 +61,7 @@ const HomePage = () => {
       <button className='btn btn-primary m-2 book' >Reschedule an appointment</button>
       </div> */}
       </div>
+      
     </Layout>
     
     )
