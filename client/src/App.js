@@ -22,6 +22,7 @@ import BmiCalculator from './pages/Bmi';
 import UserProfile from './pages/user/Profile';
 import Underweight from './pages/underweight/Underweight';
 import Overweight from './pages/overweight/Overweight';
+import Port from './pages/Port';
 
 function App() {
   const {loading}=useSelector((state)=>state.alerts);
@@ -33,6 +34,12 @@ function App() {
     <Routes>
 
       <Route path='/' 
+      element={
+      <ProtectedRoutes>
+        <Port />
+      </ProtectedRoutes> } />
+
+      <Route path='/book' 
       element={
       <ProtectedRoutes>
         <HomePage />

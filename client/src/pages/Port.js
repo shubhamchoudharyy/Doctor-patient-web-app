@@ -4,7 +4,11 @@ import { useSelector } from 'react-redux';
 import { message, Badge } from 'antd';
 import '../styles/Layout.css';
 
-const Layout = ({ children }) => {
+
+
+
+const Port = () => {
+
   const { user } = useSelector((state) => state.user);
   const location = useLocation();
   const navigate = useNavigate();
@@ -105,14 +109,11 @@ const Layout = ({ children }) => {
     ? doctorMenu
     : userMenu;
 
+
   return (
     <>
-      {/* <div className='main'>
-        <div className='layout'> */}
-          <header>
-            
-          <div className="hero">
-          <nav>
+      <div className="hero">
+      <nav>
           <h2 className="logo">Care<span>Bridge</span></h2>
 
               {sidebarMenu.map((menu) => {
@@ -124,7 +125,7 @@ const Layout = ({ children }) => {
                   >
                     <ul>
                       <li>
-                        <a href={menu.path} className='custom'>{menu.name}</a>
+                        <a href={menu.path}>{menu.name}</a>
                       </li>
                     </ul>
                   </div>
@@ -139,7 +140,7 @@ const Layout = ({ children }) => {
                     style={{ fontSize: '20px', marginTop: '0px' }}
                   >
                     <li>
-                      <a href='/notification' className='custom'>Notification</a>
+                      <a href='/notification'>Notification</a>
                     </li>
                   </Badge>
                 </ul>
@@ -153,29 +154,89 @@ const Layout = ({ children }) => {
                 </ul>
               </div>
             </nav>
-
-            </div>
-          </header>
-        {/* </div> */}
-
-        <div className='contents'>
-          <div className='header'></div>
-          <div className='body'>{children}</div>
+        <div className="contents">
+          <h4>WELCOME TO </h4>
+          <h1>Care<span>Bridge</span></h1>
+          <h3></h3>
+          <div className="newsletter">
+            <form>
+              
+              <a href='/book' className='btn btn-primary'>Book Appointments</a>
+            </form>
+          </div>
         </div>
-      {/* </div> */}
+      </div>
+
+      <section className="about">
+        <div className="main">
+          <img src="../shivji.jpg" alt="Profile" />
+          <div className="about-text">
+            <h2>About Me</h2>
+            <h5>developer <span>& engineer</span></h5>
+            <p>I am a student of B.E. CSE department from <span>NIT Trichy</span>. <br/>I have <span>3</span> years of experience in <span>web development</span> </p>
+            <button type="button">Let's talk</button>
+          </div>
+        </div>
+      </section>
+
+      <div className="service">
+        <div className="title">
+          <h2>Our Services</h2>
+        </div>
+
+        <div className="box">
+          <div className="card">
+            <i className="fa-solid fa-bars"></i>
+            <h5>Web development</h5>
+            <div className="pra">
+              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit, sequi, excepturi nisi qui sit, obcaecati ut eaque recusandae ducimus id fugiat alias? Reiciendis nisi voluptatem, impedit aliquid praesentium at. Dolore repellat rerum debitis quod, illum voluptatum, sint quas corrupti architecto sit placeat hic quis odio, ratione aspernatur. Nostrum, eaque ad!</p>
+              <p style={{ textAlign: 'center' }}>
+                <a className="button" href="#">Read More</a>
+              </p>
+            </div>
+          </div>
+
+          <div className="card">
+            <i className="fa-light fa-user"></i>
+            <h5>Web development</h5>
+            <div className="pra">
+              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit, sequi, excepturi nisi qui sit, obcaecati ut eaque recusandae ducimus id fugiat alias? Reiciendis nisi voluptatem, impedit aliquid praesentium at. Dolore repellat rerum debitis quod, illum voluptatum, sint quas corrupti architecto sit placeat hic quis odio, ratione aspernatur. Nostrum, eaque ad!</p>
+              <p style={{ textAlign: 'center' }}>
+                <a className="button" href="#">Read More</a>
+              </p>
+            </div>
+          </div>
+
+          <div className="card">
+            <i className="fa-regular fa-bell"></i>
+            <h5>Web development</h5>
+            <div className="pra">
+              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit, sequi, excepturi nisi qui sit, obcaecati ut eaque recusandae ducimus id fugiat alias? Reiciendis nisi voluptatem, impedit aliquid praesentium at. Dolore repellat rerum debitis quod, illum voluptatum, sint quas corrupti architecto sit placeat hic quis odio, ratione aspernatur. Nostrum, eaque ad!</p>
+              <p style={{ textAlign: 'center' }}>
+                <a className="button" href="#">Read More</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="contact-me">
+        <p>Let Me Get You A Beautiful Website</p>
+        <a className="button-two" href="#">Hire Me</a>
+      </div>
 
       <footer>
         <p>Shubham Choudhary</p>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi eligendi suscipit explicabo aliquid natus dolorem laborum obcaecati odio repellendus deserunt.</p>
         <div className="social">
-          <a href="#" className='custom'><i className="fa-brands fa-facebook"></i></a>
-          <a href="#" className='custom'><i className="fa-brands fa-instagram"></i></a>
-          <a href="#" className='custom'><i className="fa-brands fa-linkedin"></i></a>
+          <a href="#"><i className="fa-brands fa-facebook"></i></a>
+          <a href="#"><i className="fa-brands fa-instagram"></i></a>
+          <a href="#"><i className="fa-brands fa-linkedin"></i></a>
         </div>
         <p className="end">Copyright by Shubham Choudhary</p>
       </footer>
     </>
-  );
-};
+  )
+}
 
-export default Layout;
+export default Port;

@@ -1,13 +1,12 @@
-import React, { useEffect,useState } from 'react'
+import React,{useState,useEffect} from 'react'
 import Layout from '../../components/Layout'
+import {Form,Row,Col,Input,message} from 'antd'
 import { useSelector } from 'react-redux'
 import axios from 'axios'
-import {Col, Form, Image, Input, Row,TimePicker,message} from 'antd'
 import { useNavigate } from 'react-router-dom'
 import { useDispatch} from 'react-redux'
 import {showLoading,hideLoading} from '../../redux/features/alertSlice'
 import {useParams} from 'react-router-dom'
-import moment from 'moment'
 
 const Profile = () => {
     const {user}=useSelector((state)=>state.user)
@@ -15,10 +14,11 @@ const Profile = () => {
     const params=useParams()
     const dispatch=useDispatch()
     const navigate=useNavigate()
+
     const handleFinish=async(values)=>{
         try{
             dispatch(showLoading())
-            const res=await axios.post('/api/v1/user/updateProfile',{...values,userId:user._id},{},{
+            const res=await axios.post('/api/v1/user/updateProfile',{...values,userId:user._id},{
                 headers:{
                     Authorization:`Bearer ${localStorage.getItem('token')}`
                 }
@@ -31,14 +31,15 @@ const Profile = () => {
             }else{
                 message.error(res.data.message)
             }
+
         }catch(error){
             dispatch(hideLoading())
             console.log(error)
-            message.error('Something went Wrong')
+            message.error('Something Went Wrong')
         }
     }
 
-    const getDoctorInfo=async()=>{
+    const getUserInfo=async()=>{
         try{
             const res=await axios.post('/api/v1/user/getUserInfo',{userId:params.id},{
                 headers:{
@@ -54,57 +55,49 @@ const Profile = () => {
     }
 
     useEffect(()=>{
-        getDoctorInfo();
+        getUserInfo();
     },[])
   return (
     <Layout>
-        <div className="container emp-profile">
-            <form method="">
-                <div className="row">
-                    <div className="col-md-4">
-                        <img src={user.avatarImage} alt='avatar' />
-                    </div>
-                    <div className="col-md-6">
-                        <div className="profile-head">
-                            <h5>{user.name}</h5>
-                            <h5>{user.email}</h5>
+      <h1>profile</h1>
 
-                            <ul className='nav nav-tabs' role='tablist'>
-                                <li className='nav-item'>
-                                    <a className='nav-link active' href='#home' id='home-tab' data-toggle='tab' role='tab'>About</a>
-                                </li>
-                                <li className='nav-item'>
-                                    <a className='nav-link active' href='#profile' id='profile-tab' data-toggle='tab' role='tab'>Timeline</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+      <h4 className=''>Personal Details</h4>
+      <Form layout='vertical' onFinish={handleFinish} className='m-3' initialValues={{User}}>
 
-                    <div className="col-md-3">
-                        <input type='submit' className='profile-edit-btn' value='Edit Profile' name='btnAddMore'/> 
-                    </div>
-                    
-                </div>
+            <Row gutter={20}>
                 
-                <div className="row">
-                    <div className="col-md-4">
-                        <div className="profile-work">
-                            <p>Work Link</p>
-                            <a href='https://google.com' target='search'>Google</a> <br/>
-                            <a href='https://google.com' target='search'>Google</a> <br/>
-                            <a href='https://google.com' target='search'>Google</a> <br/>
-                            <a href='https://google.com' target='search'>Google</a> <br/>
-                        </div>
-                    </div>
-                    <div className="col-md-8 pl-5 about-info">
-                        <div className="tab-content profile-tab" id='myTabContent' >
-                            <div className="tab-pane fade show active" id='home' role='tabpanel' aria-labelledby='home-tab'></div>
-                        </div>
-                    </div>
-                </div>
-            </form>
-        </div>
-     
+                <Col xs={24} md={24} lg={8}>
+                    <Form.Item label='User Name' name='username' required rules={[{required:true}]}>
+                        <Input type='text' placeholder='username' />
+                    </Form.Item>
+                </Col>
+                <Col xs={24} md={24} lg={8}>
+                    <Form.Item label='Name' name='name' required rules={[{required:true}]}>
+                        <Input type='text' placeholder='your name' />
+                    </Form.Item>
+                </Col>
+                <Col xs={24} md={24} lg={8}>
+                    <Form.Item label='Email' name='email' required rules={[{required:true}]}>
+                        <Input type='email' placeholder='email' />
+                    </Form.Item>
+                </Col>
+                <Col xs={24} md={24} lg={8}>
+                    <Form.Item label='Height' name='height' >
+                        <Input type='text' placeholder='height' />
+                    </Form.Item>
+                </Col>
+                <Col xs={24} md={24} lg={8}>
+                    <Form.Item label='Weight' name='weight' >
+                        <Input type='text' placeholder='Weight' />
+                    </Form.Item>
+                </Col>
+                
+                <Col xs={24} md={24} lg={8}></Col>
+                <Col xs={24} md={24} lg={8}>
+                <button className='btn btn-primary form-btn' type='submit'>Update</button>
+                </Col>
+            </Row>
+            </Form>
     </Layout>
   )
 }

@@ -43,8 +43,9 @@ const BmiCalculator = () => {
 
   return (
     <Layout>
-      <div className="bmi-calculator-container">
-        <h1>BMI Calculator</h1>
+      <div style={{ height: '100vh',width:'170vh', display: 'flex', flexDirection: 'column',transform: 'translate(0, 0)' }}>
+      <div className="bmi-calculator-container" style={{marginTop:'10%', transform: 'translate(0, 0)' ,color:'white'}} >
+        <h1 >BMI Calculator</h1>
         <div className="input-container">
           <label>
             Weight (kg):
@@ -84,6 +85,7 @@ const BmiCalculator = () => {
             {renderButton()}
           </div>
         )}
+      </div>
       </div>
     </Layout>
   );

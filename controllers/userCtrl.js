@@ -324,12 +324,12 @@ const getUserProfile = async (req, res) => {
   }
 };
 
-const getDoctorInfoController=async(req,res)=>{
+const getUserInfoController=async(req,res)=>{
   try{
       const user=await userModel.findOne({_id:req.body._id})
       res.status(200).send({
           success:true,
-          message:'doctor data fetch success',
+          message:'User data fetch success',
           data:user
       })
 
@@ -360,6 +360,6 @@ const updateProfileController=async(req,res)=>{
 
 module.exports={loginController,registerController,authController,
     applyDoctorController,getAllNotificationController,deleteAllNotificationController
-    ,getAllDoctorsController,bookAppointmentController,updateProfileController,getDoctorInfoController,
+    ,getAllDoctorsController,bookAppointmentController,updateProfileController,getUserInfoController,getUserProfile,
     setAvatar,bookingAvailabilityController,
     getAllUsers,userAppointmentsController,}

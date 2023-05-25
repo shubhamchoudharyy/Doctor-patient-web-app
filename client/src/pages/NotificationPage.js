@@ -64,9 +64,11 @@ const NotificationPage = () => {
 
   return (
     <Layout>
-      <h4 className='text-center p-3'>Notifications</h4>
+       <div style={{ height: '100vh',width:'170vh', display: 'flex', flexDirection: 'column',transform: 'translate(0, 0)' }}>
+      
+      <h2 className='text-center' style={{marginTop:'10%', transform: 'translate(0, 0)' ,color:'white'}} >Notifications</h2>
       <Tabs style={{ margin: '15px', padding: '15px' }}>
-        <Tabs.TabPane tab='Unread' key={0}>
+        <Tabs.TabPane tab='Unread' key={0} style={{ color: 'white' }}>
           <div className='d-flex justify-content-end'>
             <h4
               className='p-2 text-primary'
@@ -87,7 +89,7 @@ const NotificationPage = () => {
             </div>
           ))}
         </Tabs.TabPane>
-        <Tabs.TabPane tab='Read' key={1}>
+        <Tabs.TabPane tab='Read' key={1} style={{ color: 'white' }}>
           <div className='d-flex justify-content-end'>
             <h4
               className='p-2 text-primary'
@@ -109,6 +111,7 @@ const NotificationPage = () => {
           ))}
         </Tabs.TabPane>
       </Tabs>
+      </div>
     </Layout>
   );
 };
