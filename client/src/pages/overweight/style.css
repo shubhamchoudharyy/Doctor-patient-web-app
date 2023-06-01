@@ -45,7 +45,7 @@
     height: 300px;
   }
   
-  .card {
+  .cards {
     background-color: #fff;
     padding: 30px;
     position: relative;
@@ -156,22 +156,24 @@
   
   /* ---------- Button styles ------------------ */
   
-  .navbar {
+  .navbars {
     padding-top: 50px;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   
-  .navbar h1 {
+  .navbars h1 {
     padding-bottom: 20px;
     text-transform: capitalize;
   }
   
   /** button group styles **/
-  .btn-group {
+  .btns-groups {
     border-radius: 1rem;
     text-transform: capitalize;
   }
-  .btn-group__item {
+  .btns-groups__item {
     border: none;
     /* min-width: 6rem; */
     padding: 1.5rem 3rem;
@@ -183,23 +185,23 @@
     transition: all 300ms ease-out;
     text-transform: capitalize;
   }
-  .btn-group__item:last-child {
+  .btns-groups__item:last-child {
     border-top-right-radius: 1rem;
     border-bottom-right-radius: 1rem;
   }
-  .btn-group__item:first-child {
+  .btns-groups__item:first-child {
     border-top-left-radius: 1rem;
     border-bottom-left-radius: 1rem;
   }
-  .btn-group__item:hover,
-  .btn-group__item:focus {
+  .btns-groups__item:hover,
+  .btns-groups__item:focus {
     color: rebeccapurple;
     box-shadow: inset 0px -20px 0px -15px rebeccapurple;
   }
-  .btn-group__item:focus {
+  .btns-groups__item:focus {
     outline: none;
   }
-  .btn-group__item:after {
+  .btns-groups__item:after {
     content: "✔️";
     margin-left: 0.5rem;
     display: inline-block;
@@ -209,7 +211,7 @@
     opacity: 0;
     transition: all 200ms ease-out;
   }
-  .btn-group__item--active:after {
+  .btns-groups__item--active:after {
     opacity: 1;
     transform: translatey(-2px);
   }

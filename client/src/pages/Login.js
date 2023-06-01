@@ -5,6 +5,7 @@ import {Link, useNavigate} from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import {showLoading,hideLoading} from '../redux/features/alertSlice'
 import axios from 'axios'
+import Tilt from 'react-parallax-tilt'
 const Login = () => {
   const dispatch=useDispatch()
   const navigate=useNavigate()
@@ -35,21 +36,40 @@ const Login = () => {
 }
   return (
     <>
-    <div className="form-container">
-      <Form layout='vertical' onFinish={onfinishHandler} className='register-form'>
-          <h3 className='text-center'>Login</h3>
+    <div className="App">
+      <div className="containers"></div>
+      <div className="containers-end"></div>
+      <Tilt>
+    <div className="containers-ends">
+      <Form layout='vertical' onFinish={onfinishHandler} className='content'>
+          <h3 className='content-login'>Login</h3>
           
-          <Form.Item label='Email'name='email'>
+          <Form.Item label=''name='email'>
+          <div className="inputbox">
               <Input type='email' required></Input> 
+              <span>Email</span>
+              <i></i>
+              </div>
+              
           </Form.Item>
-          <Form.Item label='Password'name='password'>
+          
+         
+          <Form.Item label=''name='password'>
+          <div className="inputbox">
               <Input type='password' required></Input> 
+              <span>Password</span>
+              <i></i>
+            </div>
           </Form.Item>
+         
           
           <Link to='/register' className='m-2'>Register here</Link>
-          <button className='btn btn-primary' type='submit'>Login</button>
+          <button className='submit' type='submit'>Login</button>
       </Form>
     </div>
+    </Tilt>
+    </div>
+    
   </>
   )
 }

@@ -75,32 +75,32 @@ const Profile = () => {
             <Row gutter={20}>
                 
                 <Col xs={24} md={24} lg={8}>
-                    <Form.Item label='First Name' name='firstname' required rules={[{required:true}]}>
+                    <Form.Item  label={<span className="form-label">First Name</span>} name='firstname' required rules={[{required:true}]}>
                         <Input type='text' placeholder='your name' />
                     </Form.Item>
                 </Col>
                 <Col xs={24} md={24} lg={8}>
-                    <Form.Item label='last Name' name='lastname' required rules={[{required:true}]}>
+                    <Form.Item  label={<span className="form-label">Last Name</span>} name='lastname' required rules={[{required:true}]}>
                         <Input type='text' placeholder='your name' />
                     </Form.Item>
                 </Col>
                 <Col xs={24} md={24} lg={8}>
-                    <Form.Item label='Phone No.' name='phone' required rules={[{required:true}]}>
+                    <Form.Item  label={<span className="form-label">Phone no.</span>} name='phone' required rules={[{required:true}]}>
                         <Input type='text' placeholder='phone no.' />
                     </Form.Item>
                 </Col>
                 <Col xs={24} md={24} lg={8}>
-                    <Form.Item label='Email' name='email' required rules={[{required:true}]}>
+                    <Form.Item  label={<span className="form-label">Email</span>} name='email' required rules={[{required:true}]}>
                         <Input type='email' placeholder='email' />
                     </Form.Item>
                 </Col>
                 <Col xs={24} md={24} lg={8}>
-                    <Form.Item label='Website' name='website' >
+                    <Form.Item  label={<span className="form-label">Website</span>} name='website' >
                         <Input type='text' placeholder='your website' />
                     </Form.Item>
                 </Col>
                 <Col xs={24} md={24} lg={8}>
-                    <Form.Item label='Address' name='address' required rules={[{required:true}]}>
+                    <Form.Item  label={<span className="form-label">Address</span>} name='address' required rules={[{required:true}]}>
                         <Input type='text' placeholder='address' />
                     </Form.Item>
                 </Col>
@@ -110,22 +110,22 @@ const Profile = () => {
             <Row gutter={20}>
                 
                 <Col xs={24} md={24} lg={8}>
-                    <Form.Item label='Specialization' name='specialization' required rules={[{required:true}]}>
+                    <Form.Item  label={<span className="form-label">Specialization</span>} name='specialization' required rules={[{required:true}]}>
                         <Input type='text' placeholder='your specialization' />
                     </Form.Item>
                 </Col>
                 <Col xs={24} md={24} lg={8}>
-                    <Form.Item label='Experience' name='experience' required rules={[{required:true}]}>
+                    <Form.Item  label={<span className="form-label">Experience</span>} name='experience' required rules={[{required:true}]}>
                         <Input type='text' placeholder='your experience' />
                     </Form.Item>
                 </Col>
                 <Col xs={24} md={24} lg={8}>
-                    <Form.Item label='Fees Per Consultation' name='feesPerConsultation' required rules={[{required:true}]}>
+                    <Form.Item  label={<span className="form-label">Fees Per Consultation</span>} name='feesPerConsultation' required rules={[{required:true}]}>
                         <Input type='text' placeholder='your fees per consultation' />
                     </Form.Item>
                 </Col>
                 <Col xs={24} md={24} lg={8}>
-                    <Form.Item label='Timings' name='timings' required rules={[{required:true}]} >
+                    <Form.Item  label={<span className="form-label">Timings</span>} name='timings' required rules={[{required:true}]} >
                         <TimePicker.RangePicker format='HH:mm' />
                     </Form.Item>
                 </Col>

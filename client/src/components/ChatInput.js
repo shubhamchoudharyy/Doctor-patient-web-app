@@ -116,9 +116,9 @@ const Container = styled.div`
       &::selection {
         background-color: #9a86f3;
       }
-      &:focus {
-        outline: none;
-      }
+      // &:focus {
+      //   outline: none;
+      // }
     }
     button {
       padding: 0.3rem 2rem;

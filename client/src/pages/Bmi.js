@@ -18,19 +18,19 @@ const BmiCalculator = () => {
   const renderButton = () => {
     if (bmi < 18.5) {
       return (
-        <Link to="/menu" className="calculate-btn">
+        <Link to="/menu" className="cal-btn">
           Underweight
         </Link>
       );
     } else if (bmi >= 25 && bmi <= 29.9) {
       return (
-        <Link to="/menu2" className="calculate-btn">
+        <Link to="/menu2" className="cal-btn">
           Overweight
         </Link>
       );
     } else if (bmi >= 30) {
       return (
-        <Link to="/menu2" className="calculate-btn">
+        <Link to="/menu2" className="cal-btn">
           Obese
         </Link>
       );
@@ -43,30 +43,31 @@ const BmiCalculator = () => {
 
   return (
     <Layout>
-      <div style={{ height: '100vh',width:'170vh', display: 'flex', flexDirection: 'column',transform: 'translate(0, 0)' }}>
-      <div className="bmi-calculator-container" style={{marginTop:'10%', transform: 'translate(0, 0)' ,color:'white'}} >
-        <h1 >BMI Calculator</h1>
+      
+      <div className="text-center" style={{marginTop:'' ,color:'white',width:'170vh'}}>
+        <div className="bmi-container">
+        <h2 className="text-center m-10" >BMI <sapn>Calculator</sapn></h2>
         <div className="input-container">
-          <label>
-            Weight (kg):
+            <div className="inputbox" style={{marginBottom:'3%'}}>
             <input
-              className="input-field"
               type="number"
               value={weight}
               onChange={(e) => setWeight(e.target.value)}
             />
-          </label>
-          <label>
-            Height (cm):
+            <span>Weight</span>
+            <i></i>
+            </div>
+            <div className="inputbox">
             <input
-              className="input-field"
               type="number"
               value={height}
               onChange={(e) => setHeight(e.target.value)}
             />
-          </label>
+            <span>Height</span>
+            <i></i>
+            </div>
         </div>
-        <button className="calculate-btn" onClick={calculateBmi}>
+        <button className="cal-btn" onClick={calculateBmi}>
           Calculate BMI
         </button>
         {bmi > 0 && (
@@ -85,8 +86,10 @@ const BmiCalculator = () => {
             {renderButton()}
           </div>
         )}
+        </div>
+        
       </div>
-      </div>
+      
     </Layout>
   );
 };

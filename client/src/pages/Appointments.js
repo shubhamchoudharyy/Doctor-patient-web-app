@@ -54,12 +54,12 @@ const Appointments = () => {
     ]
     return (
         <Layout>
-            <div style={{ height: '100vh',width:'170vh', display: 'flex', flexDirection: 'column',transform: 'translate(0, 0)' }}>
-            <h2 className='text-center' style={{marginTop:'10%', transform: 'translate(0, 0)' ,color:'white'}}> Appointment List</h2>
+            {/* <div style={{ height: '100vh',width:'170vh', display: 'flex', flexDirection: 'column',transform: 'translate(0, 0)' }}> */}
+            <h2 className='text-center' style={{marginTop:'' ,color:'white',width:'170vh'}}> Appointment List</h2>
             {loading && <p>Loading...</p>}
             {error && <p>{error}</p>}
             {appointments && <Table columns={columns}  dataSource={appointments} />}
-            </div>
+            {/* </div> */}
         </Layout>
     )
 }

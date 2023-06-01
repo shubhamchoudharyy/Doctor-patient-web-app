@@ -2,84 +2,177 @@ const Menu = [
     {
       id: 1,
       image: "images/maggi.jpg",
-      name: "maggi",
+      name: "Milk",
       category: "breakfast",
-      price: "12₹",
-      description:
-        "I love Maggi realy oo yues  Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, at consectetur totam voluptatibus quibusdam iusto. Accusamus quas, soluta ipsam autem eius necessitatibus fugiat in . ",
+      description:"1 Cup of Milk ",
+      nutrients:{
+        calories: "146",
+        carbohydrates: "11 grams",
+        protein: "8 grams",
+        fat: "8 grams",
+        fiber: "0 grams",
+        calcium: "276 mg",
+        iron: "0.1 mg",
+        vitaminA: "395 IU",
+        vitaminC: "0 mg"
+      }
     },
   
     {
       id: 2,
       image: "images/allupakoida.jpg",
-      name: "allu pakoida",
-      category: "evening",
+      name: "Bread",
+      category: "breakfast",
       price: "20₹",
       description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, at consectetur totam voluptatibus quibusdam iusto. Accusamus quas, soluta ipsam autem eius necessitatibus fugiat in . ",
+        "Bread with Peanut Butter ",
+        nutrients:{
+          calories: "146",
+          carbohydrates: "11 grams",
+          protein: "8 grams",
+          fat: "8 grams",
+          fiber: "0 grams",
+          calcium: "276 mg",
+          iron: "0.1 mg",
+          vitaminA: "395 IU",
+          vitaminC: "0 mg"
+        }
     },
     {
       id: 3,
       image: "images/corn.jpg",
-      name: "corn",
+      name: "Boiled Egg",
       category: "breakfast",
       price: "10₹",
       description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, at consectetur totam voluptatibus quibusdam iusto. Accusamus quas, soluta ipsam autem eius necessitatibus fugiat in . ",
+        " 2 Boiled egg ",
+        nutrients:{
+          calories: "78",
+          carbohydrates: "0.6 grams",
+          protein: "6.3 grams",
+          fat: "5.3 grams",
+          fiber: "0 grams",
+          calcium: "28.5 mg",
+          iron: "0.9 mg",
+          vitaminA: "317 IU",
+          vitaminC: "0 mg"
+        }
     },
     {
       id: 4,
       image: "../images/chola.jpg",
-      name: "chola",
+      name: "Rice and Dal",
       category: "lunch",
       price: "50₹",
       description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, at consectetur totam voluptatibus quibusdam iusto. Accusamus quas, soluta ipsam autem eius necessitatibus fugiat in . ",
+        "Rice and Dal ",
+        nutrients:{
+          calories: "160",
+        carbohydrates: "30 grams",
+        protein: "8 grams",
+        fat: "1 gram",
+        fiber: "7 grams",
+        calcium: "40% of the DV",
+        iron: "2% of the DV",
+        vitaminA: "0% of the DV",
+        vitaminC: "0% of the DV"
+        }
     },
     {
       id: 5,
       image: "../images/pizza.jpg",
-      name: "pizza",
-      category: "evening",
+      name: "vegetable Curry",
+      category: "lunch",
       price: "80₹",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, at consectetur totam voluptatibus quibusdam iusto. Accusamus quas, soluta ipsam autem eius necessitatibus fugiat in . ",
+      description:"Vegetable curry  ",
+      nutrients:{
+        calories: "160",
+        carbohydrates: "30 grams",
+        protein: "8 grams",
+        fat: "1 gram",
+        fiber: "7 grams",
+        calcium: "40% of the DV",
+        iron: "2% of the DV",
+        vitaminA: "0% of the DV",
+        vitaminC: "0% of the DV"
+      }
     },
     {
       id: 6,
       image: "../images/nonvegthali.jpg",
-      name: "Non-Veg Thali",
-      category: "dinner",
+      name: "Curd",
+      category: "lunch",
       price: "180₹",
       description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, at consectetur totam voluptatibus quibusdam iusto. Accusamus quas, soluta ipsam autem eius necessitatibus fugiat in . ",
+        "Curd or Dahi ",
+        nutrients:{
+          calories: "98",
+          carbohydrates: "3.4 grams",
+          protein: "11 grams",
+          fat: "4 grams",
+          fiber: "0 grams",
+          calcium: "275 mg",
+          iron: "0.1 mg",
+          vitaminA: "168 IU",
+          vitaminC: "2 mg"
+        }
     },
     {
       id: 7,
       image: "../images/sweet.jpg",
-      name: "Sweets",
+      name: "Rotis",
       category: "dinner",
       price: "60₹",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, at consectetur totam voluptatibus quibusdam iusto. Accusamus quas, soluta ipsam autem eius necessitatibus fugiat in . ",
+      description:"1-2 rotis ",
+      nutrients:{
+        calories: "160",
+        carbohydrates: "30 grams",
+        protein: "8 grams",
+        fat: "1 gram",
+        fiber: "7 grams",
+        calcium: "40% of the DV",
+        iron: "2% of the DV",
+        vitaminA: "0% of the DV",
+        vitaminC: "0% of the DV"
+      }
     },
     {
       id: 8,
       image: "../images/rajmarice.jpg",
-      name: "Rajma Rice",
-      category: "lunch",
+      name: "Vegetables",
+      category: "dinner",
       price: "60₹",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, at consectetur totam voluptatibus quibusdam iusto. Accusamus quas, soluta ipsam autem eius necessitatibus fugiat in . ",
+      description:"Fried or Steamed Vegetables ",
+      nutrients:{
+        calories: "160",
+        carbohydrates: "30 grams",
+        protein: "8 grams",
+        fat: "1 gram",
+        fiber: "7 grams",
+        calcium: "40% of the DV",
+        iron: "2% of the DV",
+        vitaminA: "0% of the DV",
+        vitaminC: "0% of the DV"
+      }
     },
     {
       id: 9,
       image: "../images/samosa.jpg",
-      name: "samaso",
-      category: "evening",
+      name: "Dal",
+      category: "dinner",
       price: "10₹",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, at consectetur totam voluptatibus quibusdam iusto. Accusamus quas, soluta ipsam autem eius necessitatibus fugiat in . ",
+      description:"Dal ",
+      nutrients:{
+        calories: "160",
+        carbohydrates: "30 grams",
+        protein: "8 grams",
+        fat: "1 gram",
+        fiber: "7 grams",
+        calcium: "40% of the DV",
+        iron: "2% of the DV",
+        vitaminA: "0% of the DV",
+        vitaminC: "0% of the DV"
+      }
     },
   ];
   

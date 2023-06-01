@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { message, Badge } from 'antd';
@@ -18,7 +18,7 @@ const Port = () => {
     message.success('Logout Successfully');
     navigate('/login');
   };
-
+  
   const doctorMenu = [
     {
       name: 'Home',
@@ -109,6 +109,7 @@ const Port = () => {
     ? doctorMenu
     : userMenu;
 
+ 
 
   return (
     <>
@@ -125,7 +126,7 @@ const Port = () => {
                   >
                     <ul>
                       <li>
-                        <a href={menu.path}>{menu.name}</a>
+                        <Link to={menu.path} className='custom'>{menu.name}</Link>
                       </li>
                     </ul>
                   </div>
@@ -140,7 +141,7 @@ const Port = () => {
                     style={{ fontSize: '20px', marginTop: '0px' }}
                   >
                     <li>
-                      <a href='/notification'>Notification</a>
+                      <Link to='/notification' className='custom'>Notification</Link>
                     </li>
                   </Badge>
                 </ul>
@@ -149,7 +150,7 @@ const Port = () => {
               <div className='menu-item' onClick={handleLogout}>
                 <ul>
                   <li>
-                    <a href='/login' className='btn btn-primary'>Logout</a>
+                    <Link to='/login' className='btn btn-primary'>Logout</Link>
                   </li>
                 </ul>
               </div>
@@ -160,10 +161,18 @@ const Port = () => {
           <h3></h3>
           <div className="newsletter">
             <form>
-              
-              <a href='/book' className='btn btn-primary'>Book Appointments</a>
+              {user?.isDoctor ? (
+                <Link to="/doctor-appointments" className="btn btn-primary">
+                  Your Appointments
+                </Link>
+              ) : (
+                <Link to="/book" className="btn btn-primary">
+                  Book Appointments
+                </Link>
+              )}
             </form>
           </div>
+
         </div>
       </div>
 
@@ -202,7 +211,7 @@ const Port = () => {
             <div className="pra">
               <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit, sequi, excepturi nisi qui sit, obcaecati ut eaque recusandae ducimus id fugiat alias? Reiciendis nisi voluptatem, impedit aliquid praesentium at. Dolore repellat rerum debitis quod, illum voluptatum, sint quas corrupti architecto sit placeat hic quis odio, ratione aspernatur. Nostrum, eaque ad!</p>
               <p style={{ textAlign: 'center' }}>
-                <a className="button" href="#">Read More</a>
+                <Link to='#' className="button" >Read More</Link>
               </p>
             </div>
           </div>
@@ -213,7 +222,7 @@ const Port = () => {
             <div className="pra">
               <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit, sequi, excepturi nisi qui sit, obcaecati ut eaque recusandae ducimus id fugiat alias? Reiciendis nisi voluptatem, impedit aliquid praesentium at. Dolore repellat rerum debitis quod, illum voluptatum, sint quas corrupti architecto sit placeat hic quis odio, ratione aspernatur. Nostrum, eaque ad!</p>
               <p style={{ textAlign: 'center' }}>
-                <a className="button" href="#">Read More</a>
+                <Link to="#" className="button" >Read More</Link>
               </p>
             </div>
           </div>
@@ -222,16 +231,16 @@ const Port = () => {
 
       <div className="contact-me">
         <p>Let Me Get You A Beautiful Website</p>
-        <a className="button-two" href="#">Hire Me</a>
+        <Link to="#" className="button-two" >Hire Me</Link>
       </div>
 
       <footer>
         <p>Shubham Choudhary</p>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi eligendi suscipit explicabo aliquid natus dolorem laborum obcaecati odio repellendus deserunt.</p>
         <div className="social">
-          <a href="#"><i className="fa-brands fa-facebook"></i></a>
-          <a href="#"><i className="fa-brands fa-instagram"></i></a>
-          <a href="#"><i className="fa-brands fa-linkedin"></i></a>
+          <Link to="#" className='custom'><i className="fa-brands fa-facebook"></i></Link>
+          <Link to="#" className='custom'><i className="fa-brands fa-instagram"></i></Link>
+          <Link to="#" className='custom'><i className="fa-brands fa-linkedin"></i></Link>
         </div>
         <p className="end">Copyright by Shubham Choudhary</p>
       </footer>

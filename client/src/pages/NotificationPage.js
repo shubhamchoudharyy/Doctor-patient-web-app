@@ -1,6 +1,6 @@
 import React from 'react';
 import Layout from '../components/Layout';
-import { Tabs, notification, message } from 'antd';
+import { Tabs, message } from 'antd';
 import { useDispatch, useSelector } from 'react-redux';
 import { hideLoading, showLoading } from '../redux/features/alertSlice';
 import axios from 'axios';
@@ -13,7 +13,7 @@ const NotificationPage = () => {
 
   const handleMarkAllRead = async () => {
     try {
-      dispatch(showLoading());
+      dispatch(showLoading()); // Assuming loading state is handled by showLoading action
       const res = await axios.post(
         '/api/v1/user/get-all-notification',
         { userId: user._id },
@@ -23,7 +23,7 @@ const NotificationPage = () => {
           },
         }
       );
-      dispatch(hideLoading());
+      dispatch(hideLoading()); // Assuming hideLoading action hides the loading state
       if (res.data.success) {
         window.location.reload();
         message.success(res.data.message);
@@ -31,7 +31,7 @@ const NotificationPage = () => {
         message.error(res.data.message);
       }
     } catch (error) {
-      dispatch(hideLoading());
+      dispatch(hideLoading()); // Assuming hideLoading action hides the loading state
       console.log(error);
       message.error('Something went Wrong');
     }
@@ -39,7 +39,7 @@ const NotificationPage = () => {
 
   const handleDeleteAllRead = async () => {
     try {
-      dispatch(showLoading());
+      dispatch(showLoading()); // Assuming loading state is handled by showLoading action
       const res = await axios.post(
         '/api/v1/user/delete-all-notification',
         { userId: user._id },
@@ -49,14 +49,14 @@ const NotificationPage = () => {
           },
         }
       );
-      dispatch(hideLoading());
+      dispatch(hideLoading()); // Assuming hideLoading action hides the loading state
       if (res.data.success) {
         message.success(res.data.message);
       } else {
         message.error(res.data.message);
       }
     } catch (error) {
-      dispatch(hideLoading());
+      dispatch(hideLoading()); // Assuming hideLoading action hides the loading state
       console.log(error);
       message.error('Something Went Wrong');
     }
@@ -64,11 +64,9 @@ const NotificationPage = () => {
 
   return (
     <Layout>
-       <div style={{ height: '100vh',width:'170vh', display: 'flex', flexDirection: 'column',transform: 'translate(0, 0)' }}>
-      
-      <h2 className='text-center' style={{marginTop:'10%', transform: 'translate(0, 0)' ,color:'white'}} >Notifications</h2>
+      <h2 className='text-center' style={{ marginTop: '', color: 'white', width: '170vh' }}>Notifications</h2>
       <Tabs style={{ margin: '15px', padding: '15px' }}>
-        <Tabs.TabPane tab='Unread' key={0} style={{ color: 'white' }}>
+        <Tabs.TabPane tab={<span style={{ color: 'white' }}>Unread</span>} key={0}>
           <div className='d-flex justify-content-end'>
             <h4
               className='p-2 text-primary'
@@ -80,16 +78,16 @@ const NotificationPage = () => {
           </div>
           {user?.notification.map((notificationMsg) => (
             <div
-              className='card'
+              className='d-flex'
               key={notificationMsg._id}
               onClick={() => navigate(notificationMsg.onClickPath)}
-              style={{ cursor: 'pointer' }}
+              style={{ cursor: 'pointer', margin: '3%', color: 'white' }}
             >
               <div className='card-text'>{notificationMsg.message}</div>
             </div>
           ))}
         </Tabs.TabPane>
-        <Tabs.TabPane tab='Read' key={1} style={{ color: 'white' }}>
+        <Tabs.TabPane tab={<span style={{ color: 'white' }}>Read</span>} key={1}>
           <div className='d-flex justify-content-end'>
             <h4
               className='p-2 text-primary'
@@ -101,17 +99,16 @@ const NotificationPage = () => {
           </div>
           {user?.seennotification.map((notificationMsg) => (
             <div
-              className='card'
+              className='d-flex'
               key={notificationMsg._id}
               onClick={() => navigate(notificationMsg.onClickPath)}
-              style={{ cursor: 'pointer' }}
+              style={{ cursor: 'pointer', margin: '3%', color: 'white' }}
             >
               <div className='card-text'>{notificationMsg.message}</div>
             </div>
           ))}
         </Tabs.TabPane>
       </Tabs>
-      </div>
     </Layout>
   );
 };

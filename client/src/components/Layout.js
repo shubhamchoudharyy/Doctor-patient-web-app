@@ -107,70 +107,66 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      {/* <div className='main'>
-        <div className='layout'> */}
-          <header>
-            
-          <div className="hero">
+      <header>
+        <div className="hero">
           <nav>
-          <h2 className="logo">Care<span>Bridge</span></h2>
+            <h2 className="logo">Care<span>Bridge</span></h2>
 
-              {sidebarMenu.map((menu) => {
-                const isActive = location.pathname === menu.path;
-                return (
-                  <div
-                    className={`menu-item ${isActive && 'active'}`}
-                    key={menu.name}
-                  >
-                    <ul>
-                      <li>
-                        <a href={menu.path} className='custom'>{menu.name}</a>
-                      </li>
-                    </ul>
-                  </div>
-                );
-              })}
-
-              <div className='menu-item'>
-                <ul>
-                  <Badge
-                    count={user && user.notification.length}
-                    dot
-                    style={{ fontSize: '20px', marginTop: '0px' }}
-                  >
+            {sidebarMenu.map((menu) => {
+              const isActive = location.pathname === menu.path;
+              return (
+                <div
+                  className={`menu-item ${isActive && 'active'}`}
+                  key={menu.name}
+                >
+                  <ul>
                     <li>
-                      <a href='/notification' className='custom'>Notification</a>
+                      <Link to={menu.path} className='custom'>{menu.name}</Link>
                     </li>
-                  </Badge>
-                </ul>
-              </div>
+                  </ul>
+                </div>
+              );
+            })}
 
-              <div className='menu-item' onClick={handleLogout}>
-                <ul>
+            <div className='menu-item'>
+              <ul>
+                <Badge
+                  count={user && user.notification.length}
+                  dot
+                  style={{ fontSize: '20px', marginTop: '0px' }}
+                >
                   <li>
-                    <a href='/login' className='btn btn-primary'>Logout</a>
+                    <Link to='/notification' className='custom'>Notification</Link>
                   </li>
-                </ul>
-              </div>
-            </nav>
-
+                </Badge>
+              </ul>
             </div>
-          </header>
-        {/* </div> */}
 
-        <div className='contents'>
-          <div className='header'></div>
-          <div className='body'>{children}</div>
+            <div className='menu-item' onClick={handleLogout}>
+              <ul>
+                <li>
+                  <Link to='/login' className='btn btn-primary'>Logout</Link>
+                </li>
+              </ul>
+            </div>
+          </nav>
         </div>
-      {/* </div> */}
+      </header>
+
+      <div className='contents' >
+        <div className='header'></div>
+        <div className='body' style={{ overflowY: 'auto', maxHeight: 'calc(100vh - 200px)' }}>
+          {children}
+        </div>
+      </div>
 
       <footer>
         <p>Shubham Choudhary</p>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi eligendi suscipit explicabo aliquid natus dolorem laborum obcaecati odio repellendus deserunt.</p>
         <div className="social">
-          <a href="#" className='custom'><i className="fa-brands fa-facebook"></i></a>
-          <a href="#" className='custom'><i className="fa-brands fa-instagram"></i></a>
-          <a href="#" className='custom'><i className="fa-brands fa-linkedin"></i></a>
+          <Link to="#" className='custom'><i className="fa-brands fa-facebook"></i></Link>
+          <Link to="#" className='custom'><i className="fa-brands fa-instagram"></i></Link>
+          <Link to="#" className='custom'><i className="fa-brands fa-linkedin"></i></Link>
         </div>
         <p className="end">Copyright by Shubham Choudhary</p>
       </footer>

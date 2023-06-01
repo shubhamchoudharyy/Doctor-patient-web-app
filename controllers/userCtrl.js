@@ -120,17 +120,37 @@ const registerController = async (req, res) => {
     }
 
 }
+const getAllUsers = async (req, res, next) => {
+  try {
+    const currentUser = await userModel.findById(req.params.id);
+    const isAdmin = currentUser.isAdmin;
+    const isDoctor = currentUser.isDoctor;
 
-const getAllUsers=async (req,res,next)=>{
-    try{
-        const users=await userModel.find({_id: {$ne:req.params.id}}).select([
-            "email","username","avatarImage","_id",
-        ]);
-        return res.json(users);
-    }catch(ex){
-        next(ex);
+    let filter = {};
+
+    if (isAdmin) {
+      // If current user is an admin, show all users
+      filter = {};
+    } else if (isDoctor) {
+      // If current user is a doctor, show admins and users with isDoctor set to false
+      filter = { $or: [{ isAdmin: true }, { isDoctor: false }] };
+    } else {
+      // If current user is a regular user, show users with isDoctor set to true
+      filter = { isDoctor: true };
     }
+
+    const users = await userModel
+      .find(filter)
+      .select(["email", "username", "avatarImage", "_id"]);
+
+    return res.json(users);
+  } catch (ex) {
+    next(ex);
+  }
 };
+
+
+
   
 
 const authController=async(req,res)=>{
@@ -324,38 +344,43 @@ const getUserProfile = async (req, res) => {
   }
 };
 
-const getUserInfoController=async(req,res)=>{
-  try{
-      const user=await userModel.findOne({_id:req.body._id})
-      res.status(200).send({
-          success:true,
-          message:'User data fetch success',
-          data:user
-      })
-
-  }catch(error){
-      console.log(error)
-      res.status(500).send({
-          success:false,
-          error,
-          message:'Error in fetchibg details'
-      })
+const getUserInfoController = async (req, res) => {
+  try {
+    const user = await userModel.findById(req.body.userId);
+    res.status(200).send({
+      success: true,
+      message: 'User data fetch success',
+      data: user,
+    });
+  } catch (error) {
+    console.log(error);
+    res.status(500).send({
+      success: false,
+      error: error.message,
+      message: 'Error in fetching details',
+    });
   }
-}
+};
 
-const updateProfileController=async(req,res)=>{
-  try{
-      const user=await userModel.findOneAndUpdate({_id:req.body._id},req.body)
-      res.status(201).send({success:true,message:'User Profile Updated',data:user,})
-  }catch(error){
-      console.log(error)
-      res.status(500).send({
-          message:'User Profile update issue',
-          success:false,
-          error
-      })
+const updateProfileController = async (req, res) => {
+  try {
+    const user = await userModel.findByIdAndUpdate(req.body.userId, req.body, { new: true });
+    res.status(201).send({
+      success: true,
+      message: 'User Profile Updated',
+      data: user,
+    });
+  } catch (error) {
+    console.log(error);
+    res.status(500).send({
+      message: 'User Profile update issue',
+      success: false,
+      error: error.message,
+    });
   }
-}
+};
+
+
 
 
 module.exports={loginController,registerController,authController,

@@ -1,13 +1,164 @@
-.form-container{
-    display:flex;
-    align-items: center;
-    justify-content: center;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Login1.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+.App{
+    background-color: #111827;
     height: 100vh;
+    width:100vw;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.containers{
+    height: 10rem;
+    width:10rem;
+    background-image: linear-gradient(to right,var(#68d391),var(#3b82f6));
+    border-radius: 9999px;
+    position: absolute;
+    left: 66.66667%;
+    top:-14rem;
+    transform: rotate(-20deg);
+    transform: rotate(160deg);
+    animation: pulse 2s infinite;
+
     
 }
 
-.register-form{
-    border: 1px solid gray;
-    padding: 30px;
-    /* width: 30%; */
+.containers-end{
+    height: 8.75rem;
+    width: 8.75rem;
+    background-image: linear-gradient(to right,var(#9f7aea),var(#ec4899),var(#ef4444));
+    top:24rem;
+    left: -5rem;
+    position: absolute;
+    transform: rotate(180deg);
+    animation: pulse 2s infinite;
+
 }
+
+.containers-ends{
+    width: 32rem;
+    height: 32rem;
+    background-color: #fff;
+    background-color: rgba(255,255,255,0.1);
+    border-radius: 1rem;
+    box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
+    z-index: 2;
+    border: 1px solid;
+    border-color: rgba(255,255,255,0.3) ;
+    border-right-width:0 ;
+    border-bottom-width: 0;
+    backdrop-filter: blur(4px);
+    backdrop-filter: blur(2px);
+
+}
+
+.content{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+
+.content-login{
+    color: #fff;
+    font-family: 'Poppins',sans-serif;
+    font-size: 1.5rem;
+    letter-spacing: 0.15rem;
+
+}
+
+.inputbox {
+    position: relative;
+    width: 196px;
+  }
+  
+  .inputbox input {
+    position: relative;
+    width: 100%;
+    padding: 20px 10px 10px;
+    background: transparent;
+    outline: none;
+    box-shadow: none;
+    border: none;
+    color: #23242a;
+    font-size: 1em;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+    z-index: 10;
+  }
+  
+  .inputbox span {
+    position: absolute;
+    left: 0;
+    padding: 20px 10px 10px;
+    font-size: 1em;
+    color: #8f8f8f;
+    letter-spacing: 00.05em;
+    transition: 0.5s;
+    pointer-events: none;
+  }
+  
+  .inputbox input:valid ~span,
+  .inputbox input:focus ~span {
+    color: #45f3ff;
+    transform: translateX(-10px) translateY(-34px);
+    font-size: 0,75em;
+  }
+  
+  .inputbox i {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: #45f3ff;
+    border-radius: 4px;
+    transition: 0.5s;
+    pointer-events: none;
+    z-index: 9;
+  }
+  
+  .inputbox input:valid ~i,
+  .inputbox input:focus ~i {
+    height: 44px;
+  }
+
+.submit{
+    cursor: pointer;
+    border-radius: 9999px;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    background-color: rgba(255, 255, 255, 0.5);
+
+}
+.submit:hover{
+    background-color: #fff;
+    opacity: 80 ;
+
+}
+
+
+@keyframes pulse {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+

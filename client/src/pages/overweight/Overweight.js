@@ -28,7 +28,7 @@ const filterItem=(category)=>{
     
   return (
     <>
-        <Navbar filterItem={filterItem} menuList={menuList}/>
+      <Navbar filterItem={filterItem} menuList={menuList}/>
       <MenuCard menuData={menuData}/>
 
       

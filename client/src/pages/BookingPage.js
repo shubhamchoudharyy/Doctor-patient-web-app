@@ -97,7 +97,7 @@ function BookingPage() {
     },[])
   return (
     <Layout>
-      <h1>Booking</h1>
+      <h2 className='text-center' style={{width:'150vh',color:'white'}}>Booking</h2>
       <div className="container m-2 ">
         {doctors && (
             <div>

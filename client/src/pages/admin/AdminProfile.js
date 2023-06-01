@@ -8,7 +8,7 @@ import { useDispatch } from 'react-redux';
 import { showLoading, hideLoading } from '../../redux/features/alertSlice';
 import { useParams } from 'react-router-dom';
 
-const Profile = () => {
+const AdminProfile = () => {
   const { user } = useSelector((state) => state.user);
   const [initialValues, setInitialValues] = useState(null);
   const params = useParams();
@@ -110,4 +110,4 @@ const Profile = () => {
   );
 };
 
-export default Profile;
+export default AdminProfile;

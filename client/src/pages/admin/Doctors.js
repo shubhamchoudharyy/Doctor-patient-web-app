@@ -76,7 +76,7 @@ const Doctors = () => {
     ]
   return (
     <Layout>
-    <h1 className='text-center m-2'>Doctors List</h1>
+    <h2 className='text-center m-2' style={{color:'white',width:'170vh'}}>Doctors List</h2>
     <Table columns={columns} dataSource={doctors} />
   </Layout>
   )

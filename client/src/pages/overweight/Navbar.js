@@ -3,13 +3,13 @@ import React from 'react'
 const Navbar = ({filterItem,menuList}) => {
   return (
     <>
-      <nav className="navbar">
-        <div className='"btn-group'>
+      <nav className="navbars">
+        <div className='"btns-groups'>
             {
                 menuList.map((currelem)=>{
                     return (
                         <button
-                        className='btn-group__item'
+                        className='btns-groups__item'
                         onClick={()=> filterItem(currelem)}>{currelem}</button>
                     );
                 })

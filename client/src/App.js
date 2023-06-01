@@ -23,6 +23,7 @@ import UserProfile from './pages/user/Profile';
 import Underweight from './pages/underweight/Underweight';
 import Overweight from './pages/overweight/Overweight';
 import Port from './pages/Port';
+import AdminProfile from './pages/admin/AdminProfile';
 
 function App() {
   const {loading}=useSelector((state)=>state.alerts);
@@ -101,6 +102,12 @@ function App() {
       element={
       <ProtectedRoutes>
         <UserProfile/>
+      </ProtectedRoutes> } />
+
+      <Route path='/admin/profile/:id' 
+      element={
+      <ProtectedRoutes>
+        <AdminProfile/>
       </ProtectedRoutes> } />
 
 

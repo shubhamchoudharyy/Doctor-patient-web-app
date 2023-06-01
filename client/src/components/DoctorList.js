@@ -7,7 +7,7 @@ function DoctorList({doctor}) {
   return (
     <>
     <div className='card m-2'
-    style={{cursor:'pointer'}} onClick={()=>navigate(`/doctor/book-appointment/${doctor._id}`)}>
+    style={{cursor:'pointer',color:'white',backgroundColor:'rgba(255,255,255,0.1)',height:'100%'}} onClick={()=>navigate(`/doctor/book-appointment/${doctor._id}`)}>
         <div className="card-header">
             Dr. {doctor.firstname} {doctor.lastname}
         </div>

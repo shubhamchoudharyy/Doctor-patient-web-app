@@ -1,85 +1,174 @@
 const Menu = [
-    {
-      id: 1,
-      image: "images/maggi.jpg",
-      name: "maggi",
-      category: "breakfast",
-      price: "12₹",
-      description:
-        "I love Maggi realy oo yues  Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, at consectetur totam voluptatibus quibusdam iusto. Accusamus quas, soluta ipsam autem eius necessitatibus fugiat in . ",
-    },
+  {
+    id: 1,
+    image: "images/maggi.jpg",
+    name: "Oatmeal",
+    category: "breakfast",
+    price: "12₹",
+    description: "A wholesome breakfast option made with oats.",
+    nutrients: {
+      calories: "150-170",
+      carbohydrates: "27-30 grams",
+      protein: "5-6 grams",
+      fat: "2-3 grams",
+      fiber: "4-5 grams",
+      calcium: "2-4% of the Daily Value (DV)",
+      iron: "8-10% of the DV",
+      vitaminA: "0-2% of the DV",
+      vitaminC: "0% of the DV"
+    }
+  },
+  // Add more menu items here
+
+
   
     {
       id: 2,
       image: "images/allupakoida.jpg",
-      name: "allu pakoida",
-      category: "evening",
+      name: "Tofu",
+      category: "breakfast",
       price: "20₹",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, at consectetur totam voluptatibus quibusdam iusto. Accusamus quas, soluta ipsam autem eius necessitatibus fugiat in . ",
+      description:"Tofu ",
+      nutrients: {
+        calories: "50-70",
+        carbohydrates: "10-15 grams",
+        protein: "0-1 grams",
+        fat: "0 grams",
+        fiber: "2-3 grams",
+        calcium: "0% of the DV",
+        iron: "0-2% of the DV",
+        vitaminA: "10-15% of the DV",
+        vitaminC: "20-25% of the DV"
+        }
     },
     {
       id: 3,
       image: "images/corn.jpg",
-      name: "corn",
+      name: "Green Tea",
       category: "breakfast",
-      price: "10₹",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, at consectetur totam voluptatibus quibusdam iusto. Accusamus quas, soluta ipsam autem eius necessitatibus fugiat in . ",
+      description:"Green Tea ",
+      nutrients:{
+        calories: "50-70",
+        carbohydrates: "10-15 grams",
+        protein: "0-1 grams",
+        fat: "0 grams",
+        fiber: "2-3 grams",
+        calcium: "0% of the DV",
+        iron: "0-2% of the DV",
+        vitaminA: "10-15% of the DV",
+        vitaminC: "20-25% of the DV"
+      }
     },
     {
       id: 4,
       image: "../images/chola.jpg",
-      name: "chola",
+      name: "Rice and Dal",
       category: "lunch",
       price: "50₹",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, at consectetur totam voluptatibus quibusdam iusto. Accusamus quas, soluta ipsam autem eius necessitatibus fugiat in . ",
+      description:"Rice and Dal ",
+      nutrients:{
+        calories: "160",
+        carbohydrates: "30 grams",
+        protein: "8 grams",
+        fat: "1 gram",
+        fiber: "7 grams",
+        calcium: "40% of the DV",
+        iron: "2% of the DV",
+        vitaminA: "0% of the DV",
+        vitaminC: "0% of the DV"
+            }
     },
     {
       id: 5,
       image: "../images/pizza.jpg",
-      name: "pizza",
-      category: "evening",
-      price: "80₹",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, at consectetur totam voluptatibus quibusdam iusto. Accusamus quas, soluta ipsam autem eius necessitatibus fugiat in . ",
+      name: "Steamed Vegetables",
+      category: "lunch",
+      description:"Steamed Vegetables ",
+      nutrients:{
+        calories: "160",
+        carbohydrates: "30 grams",
+        protein: "8 grams",
+        fat: "1 gram",
+        fiber: "7 grams",
+        calcium: "40% of the DV",
+        iron: "2% of the DV",
+        vitaminA: "0% of the DV",
+        vitaminC: "0% of the DV"
+      }
     },
     {
       id: 6,
       image: "../images/nonvegthali.jpg",
-      name: "Non-Veg Thali",
-      category: "dinner",
+      name: "Salad",
+      category: "lunch",
       price: "180₹",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, at consectetur totam voluptatibus quibusdam iusto. Accusamus quas, soluta ipsam autem eius necessitatibus fugiat in . ",
+      description:"Salad with cucember,tomato and lettuce  ",
+      nutrients:{
+        calories: "160",
+        carbohydrates: "30 grams",
+        protein: "8 grams",
+        fat: "1 gram",
+        fiber: "7 grams",
+        calcium: "40% of the DV",
+        iron: "2% of the DV",
+        vitaminA: "0% of the DV",
+        vitaminC: "0% of the DV"
+      }
     },
     {
       id: 7,
       image: "../images/sweet.jpg",
-      name: "Sweets",
+      name: "Rotis",
       category: "dinner",
       price: "60₹",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, at consectetur totam voluptatibus quibusdam iusto. Accusamus quas, soluta ipsam autem eius necessitatibus fugiat in . ",
+      description:"2-3 rotis ",
+      nutrients:{
+        calories: "160",
+        carbohydrates: "30 grams",
+        protein: "8 grams",
+        fat: "1 gram",
+        fiber: "7 grams",
+        calcium: "40% of the DV",
+        iron: "2% of the DV",
+        vitaminA: "0% of the DV",
+        vitaminC: "0% of the DV"
+      }
     },
     {
       id: 8,
       image: "../images/rajmarice.jpg",
-      name: "Rajma Rice",
-      category: "lunch",
-      price: "60₹",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, at consectetur totam voluptatibus quibusdam iusto. Accusamus quas, soluta ipsam autem eius necessitatibus fugiat in . ",
+      name: "Vegetable Curry",
+      category: "dinner",
+      description:"Vegetable Curry ",
+      nutrients:{
+        calories: "160",
+        carbohydrates: "30 grams",
+        protein: "8 grams",
+        fat: "1 gram",
+        fiber: "7 grams",
+        calcium: "40% of the DV",
+        iron: "2% of the DV",
+        vitaminA: "0% of the DV",
+        vitaminC: "0% of the DV"
+      }
     },
     {
       id: 9,
       image: "../images/samosa.jpg",
-      name: "samaso",
-      category: "evening",
-      price: "10₹",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, at consectetur totam voluptatibus quibusdam iusto. Accusamus quas, soluta ipsam autem eius necessitatibus fugiat in . ",
+      name: "Salad",
+      category: "dinner",
+      description:"Salad ",
+      nutrients:{
+        calories: "160",
+        carbohydrates: "30 grams",
+        protein: "8 grams",
+        fat: "1 gram",
+        fiber: "7 grams",
+        calcium: "40% of the DV",
+        iron: "2% of the DV",
+        vitaminA: "0% of the DV",
+        vitaminC: "0% of the DV"
+      }
     },
   ];
   

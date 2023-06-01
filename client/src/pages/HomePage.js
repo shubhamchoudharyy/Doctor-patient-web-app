@@ -37,23 +37,19 @@ const HomePage = () => {
 
   useEffect(() => {
     getUserData()
-    if (user && !user.isAvatarImageSet) {
-      navigate('/setAvatar')
-    }
+    
   }, [user])
 
-  if (user && !user.isAvatarImageSet) {
-    return null // or some other placeholder while waiting for redirection
-  }
+ 
 
   
   return (
     <Layout >
       
-      <h1 className='text-right m-5'>Home Page</h1>
-      <div className='card'>
-      <Row  className='doc'>
-        {doctors && doctors.map((doctor)=><DoctorList doctor={doctor} />
+      <h2 className='text-center' style={{marginTop:'0%' ,color:'white',width:'170vh'}}>Book Your Appointment</h2>
+      <div className='d-flex doct' style={{color:'white'}}>
+      <Row  className='doc' style={{color:'white'}}>
+        {doctors && doctors.map((doctor)=><DoctorList doctor={doctor} style={{color:'white'}} />
        )}
       </Row>
       {/* <div className="d-flex">

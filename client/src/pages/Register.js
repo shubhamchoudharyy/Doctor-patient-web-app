@@ -5,6 +5,7 @@ import {Link, useNavigate} from 'react-router-dom'
 import axios from 'axios';
 import { useDispatch } from 'react-redux';
 import { hideLoading, showLoading } from '../redux/features/alertSlice';
+import Tilt from 'react-parallax-tilt';
 const Register = () => {
     const dispatch=useDispatch()
     const navigate=useNavigate()
@@ -28,26 +29,47 @@ const Register = () => {
     }
     
   return (
-    <>
-      <div className="form-container">
-        <Form layout='vertical' onFinish={onfinishHandler} className='register-form'>
-            <h3 className='text-center'>Register Form</h3>
-            <Form.Item label='Username'name='username'>
+    <><div className="App">
+        <div className="containers"></div>
+        <div className="containers-end"></div>
+        <Tilt>
+      <div className="containers-ends" style={{width:'40rem', height:'40rem'}}>
+        <Form layout='vertical' onFinish={onfinishHandler} className='content'>
+            <h3 className='content-login'>Register Form</h3>
+            <Form.Item label=''name='username'>
+                <div className="inputbox">
                 <Input type='text' required></Input> 
+                <span>Username</span>
+                <i></i>
+                </div>
             </Form.Item>
-            <Form.Item label='Name'name='name'>
+            <Form.Item label=''name='name'>
+                <div className="inputbox">
                 <Input type='text' required></Input> 
+                <span>Name</span>
+                <i></i>
+                </div>
             </Form.Item>
-            <Form.Item label='Email'name='email'>
+            <Form.Item label=''name='email'>
+                <div className="inputbox">
                 <Input type='email' required></Input> 
+                <span>Email</span>
+                <i></i>
+                </div>
             </Form.Item>
-            <Form.Item label='Password'name='password'>
+            <Form.Item label=''name='password'>
+                <div className="inputbox">
                 <Input type='password' required></Input> 
+                <span>Password</span>
+                <i></i>
+                </div>
             </Form.Item>
        
             <Link to='/login' className='m-2'>Already a user login</Link>
-            <button className='btn btn-primary' type='submit'>Register</button>
+            <button className='submit' type='submit'>Register</button>
         </Form>
+      </div>
+      </Tilt>
       </div>
     </>
   )

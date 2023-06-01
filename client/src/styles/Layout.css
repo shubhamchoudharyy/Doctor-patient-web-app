@@ -2,12 +2,16 @@
     padding:0;
     margin:0;
     font-family: 'Josefin Sans',sans-serif;
-    box-sizing: border-box
+    box-sizing: border-box;
+}
+body{
+    background-color:  rgba(255,255,255,0.1);
 }
 .hero{
     height: 100vh;
     width: 100%;
-    background-image: url(../bgimg.jpg);
+    /* background-image: url(../bgimg.jpg); */
+    background-color:  #111827;
     background-size: cover;
     background-position: center;
 }
@@ -15,15 +19,17 @@ nav{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-top: 5px;
+    padding-top: 20px;
     padding-left: 8%;
     padding-right: 8%;
 
 }
 
-label.ant-form-item-label {
+/* CSS code for ApplyDoctor component */
+.form-label {
     color: white;
   }
+  
   
 
 .logo{
@@ -43,14 +49,14 @@ nav ul li{
 
 }
 
-nav ul li a{
+.custom{
     color:white;
     text-decoration: none;
     font-weight: bold;
     text-transform: capitalize;
 }
 
-nav ul li a:hover {
+.custom:hover {
     color: #f9004d;
     transition:  0.4s;
 }
@@ -77,6 +83,8 @@ nav ul li a:hover {
     transform: translateY(-50%);
 
 }
+
+
 
 h1{
     color:white;
@@ -255,6 +263,28 @@ h5{
     transition: .4s;
 
 }
+.body::-webkit-scrollbar {
+    width: 0.2rem;
+  }
+  
+  .body::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+  }
+  
+  .body::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+  
+  .body::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+  }
+  
+.body{
+    height: auto;
+    width: auto;
+}
 
 .card .button:hover{
     background-color: transparent;
@@ -333,7 +363,7 @@ footer p:nth-child(2){
 
 }
 
-.social a{
+.social .custom{
     width: 45px;
     height: 45px;
     display: flex;
@@ -347,7 +377,7 @@ footer p:nth-child(2){
     font-size: 20px;
 }
 
-.social a:hover{
+.social .custom:hover{
     transform: scale(1.3);
     transition: .3s;
 
