@@ -3,7 +3,8 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { message, Badge } from 'antd';
 import '../styles/Layout.css';
-
+import Appointments from './Appointments';
+import Logo from '../assets/img.jpg';
 
 
 
@@ -178,12 +179,14 @@ const Port = () => {
 
       <section className="about">
         <div className="main">
-          <img src="../shivji.jpg" alt="Profile" />
+          <img src={Logo} alt="Profile" />
           <div className="about-text">
-            <h2>About Me</h2>
-            <h5>developer <span>& engineer</span></h5>
-            <p>I am a student of B.E. CSE department from <span>NIT Trichy</span>. <br/>I have <span>3</span> years of experience in <span>web development</span> </p>
-            <button type="button">Let's talk</button>
+            <h2>About Us</h2>
+            {/* <h5>developer <span>& engineer</span></h5> */}
+            <p>Welcome to our <span>doctor-patient </span> interaction web app! We are dedicated to improving the way doctors and patients connect and communicate. Our platform aims to streamline the healthcare experience, making it more convenient, efficient, and accessible for everyone involved.
+
+At our core, we believe in the power of technology to enhance healthcare delivery and bridge the gap between doctors and patients. Through our web app, we provide a secure and user-friendly platform that facilitates seamless interactions and fosters better collaboration between <span>healthcare</span> providers and <span>patients.</span></p>
+            {/* <button type="button">Let's talk</button> */}
           </div>
         </div>
       </section>
@@ -196,9 +199,9 @@ const Port = () => {
         <div className="box">
           <div className="card">
             <i className="fa-solid fa-bars"></i>
-            <h5>Web development</h5>
+            <h5>Appointments</h5>
             <div className="pra">
-              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit, sequi, excepturi nisi qui sit, obcaecati ut eaque recusandae ducimus id fugiat alias? Reiciendis nisi voluptatem, impedit aliquid praesentium at. Dolore repellat rerum debitis quod, illum voluptatum, sint quas corrupti architecto sit placeat hic quis odio, ratione aspernatur. Nostrum, eaque ad!</p>
+              <p>We assure you will get yourself treated carefully and can get the personal appointments of the doctor through our app</p>
               <p style={{ textAlign: 'center' }}>
                 <a className="button" href="#">Read More</a>
               </p>
@@ -207,9 +210,9 @@ const Port = () => {
 
           <div className="card">
             <i className="fa-light fa-user"></i>
-            <h5>Web development</h5>
+            <h5>Chat</h5>
             <div className="pra">
-              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit, sequi, excepturi nisi qui sit, obcaecati ut eaque recusandae ducimus id fugiat alias? Reiciendis nisi voluptatem, impedit aliquid praesentium at. Dolore repellat rerum debitis quod, illum voluptatum, sint quas corrupti architecto sit placeat hic quis odio, ratione aspernatur. Nostrum, eaque ad!</p>
+              <p>You will also get a facility to chat with our doctor so that you can first discuss your problem with them  </p>
               <p style={{ textAlign: 'center' }}>
                 <Link to='#' className="button" >Read More</Link>
               </p>
@@ -218,9 +221,9 @@ const Port = () => {
 
           <div className="card">
             <i className="fa-regular fa-bell"></i>
-            <h5>Web development</h5>
+            <h5>Diet</h5>
             <div className="pra">
-              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit, sequi, excepturi nisi qui sit, obcaecati ut eaque recusandae ducimus id fugiat alias? Reiciendis nisi voluptatem, impedit aliquid praesentium at. Dolore repellat rerum debitis quod, illum voluptatum, sint quas corrupti architecto sit placeat hic quis odio, ratione aspernatur. Nostrum, eaque ad!</p>
+              <p>You also get the service to get the diet chart according to your body mass index </p>
               <p style={{ textAlign: 'center' }}>
                 <Link to="#" className="button" >Read More</Link>
               </p>
@@ -230,19 +233,19 @@ const Port = () => {
       </div>
 
       <div className="contact-me">
-        <p>Let Me Get You A Beautiful Website</p>
-        <Link to="#" className="button-two" >Hire Me</Link>
+        <p>You can contact us through our Social handles</p>
+        {/* <Link to="#" className="button-two" >Hire Me</Link> */}
       </div>
 
       <footer>
-        <p>Shubham Choudhary</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi eligendi suscipit explicabo aliquid natus dolorem laborum obcaecati odio repellendus deserunt.</p>
+        <p>CareBridge</p>
+        <p></p>
         <div className="social">
           <Link to="#" className='custom'><i className="fa-brands fa-facebook"></i></Link>
           <Link to="#" className='custom'><i className="fa-brands fa-instagram"></i></Link>
           <Link to="#" className='custom'><i className="fa-brands fa-linkedin"></i></Link>
         </div>
-        <p className="end">Copyright by Shubham Choudhary</p>
+        <p className="end">Copyright by CareBridge</p>
       </footer>
     </>
   )

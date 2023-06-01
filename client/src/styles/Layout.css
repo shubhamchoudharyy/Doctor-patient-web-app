@@ -10,8 +10,8 @@ body{
 .hero{
     height: 100vh;
     width: 100%;
-    /* background-image: url(../bgimg.jpg); */
-    background-color:  #111827;
+    background-image: url(../about.jpg);
+    /* background-color:  #111827; */
     background-size: cover;
     background-position: center;
 }

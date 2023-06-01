@@ -161,14 +161,14 @@ const Layout = ({ children }) => {
       </div>
 
       <footer>
-        <p>Shubham Choudhary</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi eligendi suscipit explicabo aliquid natus dolorem laborum obcaecati odio repellendus deserunt.</p>
+        <p>CareBridge</p>
+        <p></p>
         <div className="social">
           <Link to="#" className='custom'><i className="fa-brands fa-facebook"></i></Link>
           <Link to="#" className='custom'><i className="fa-brands fa-instagram"></i></Link>
           <Link to="#" className='custom'><i className="fa-brands fa-linkedin"></i></Link>
         </div>
-        <p className="end">Copyright by Shubham Choudhary</p>
+        <p className="end">Copyright by CareBridge</p>
       </footer>
     </>
   );
