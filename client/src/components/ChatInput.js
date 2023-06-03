@@ -12,6 +12,7 @@ const ChatInput = ({handleSendMsg}) => {
     setShowEmojiPicker(!showEmojiPicker);
   };
   const handleEmojiClick=(event,emoji)=>{
+    console.log(emoji)
     let message=msg;
     message+=emoji.emoji;
     setMsg(message);
@@ -38,9 +39,9 @@ const ChatInput = ({handleSendMsg}) => {
         </div>
         <form className="input-container" onSubmit={(e)=>sendChat(e)}>
           <input type='text' placeholder='Type your message here' value={msg} onChange={(e)=>setMsg(e.target.value)} />
-          <button className='submit'>
+          {/* <button className='submit'>
             <IoMdSend/>
-          </button>
+          </button> */}
         </form>
       </Container>
     </>
@@ -99,14 +100,16 @@ const Container = styled.div`
   
   .input-container {
     width: 100%;
+    height:50%;
     border-radius: 2rem;
     display: flex;
     align-items: center;
     gap: 2rem;
     background-color: #ffffff34;
     input {
-      width: 90%;
-      height: 60%;
+      width: 100%;
+      border-radius:2rem;
+      height: 100%;
       background-color: transparent;
       color: white;
       border: none;
@@ -124,8 +127,8 @@ const Container = styled.div`
       padding: 0.3rem 2rem;
       border-radius: 2rem;
       display: flex;
-      justify-content: center;
-      align-items: center;
+      justify-content: end;
+      align-items: end;
       background-color: #9a86f3;
       border: none;
       @media screen and (min-width: 720px) and (max-width: 1080px) {

@@ -110,7 +110,7 @@ const Layout = ({ children }) => {
       <header>
         <div className="hero">
           <nav>
-            <h2 className="logo">Care<span>Bridge</span></h2>
+            <Link to='/' className='custom'><h2 className="logo">Care<span>Bridge</span></h2></Link>
 
             {sidebarMenu.map((menu) => {
               const isActive = location.pathname === menu.path;

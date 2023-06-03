@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Layout from '../../components/Layout'
 import axios from 'axios'
-import { Table } from 'antd'
+import { Table,message } from 'antd'
 
 const Users = () => {
 
@@ -22,6 +22,25 @@ const Users = () => {
             console.log(error)
         }
     };
+
+    const handleAccountStatus=async(record)=>{
+        try{
+            const res=await axios.post('/api/v1/admin/deleteAccountStatus',
+            {userId:record.userId,},{
+                headers:{
+                    Authorization:`Bearer ${localStorage.getItem('token')}`
+                }
+            })
+            if(res.data.success){
+                message.success(res.data.message)
+                window.location.reload()
+            }
+        }catch(error){
+            message.error('Something Went Wrong')
+        }
+
+    }
+    
 
     useEffect(()=>{
         getUsers();
@@ -48,7 +67,7 @@ const Users = () => {
             dataIndex:'actions',
             render:(text,record)=>(
                 <div className="d-flex">
-                    <button className='btn btn-danger'>Block</button>
+                    <button className='btn btn-danger' onClick={()=>handleAccountStatus(record)}>Delete</button>
                 </div>
 
             )

@@ -6,6 +6,10 @@ const messageSchema=new mongoose.Schema({
             type:String,
             required:true,
         },
+         iv: {
+            type: String,
+            required: true
+        },
     },
     users:Array,
     sender:{
