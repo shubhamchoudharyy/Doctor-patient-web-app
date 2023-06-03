@@ -203,7 +203,7 @@ At our core, we believe in the power of technology to enhance healthcare deliver
             <div className="pra">
               <p>We assure you will get yourself treated carefully and can get the personal appointments of the doctor through our app</p>
               <p style={{ textAlign: 'center' }}>
-                <a className="button" href="#">Read More</a>
+                {/* <a className="button" href="#">Read More</a> */}
               </p>
             </div>
           </div>
@@ -212,9 +212,9 @@ At our core, we believe in the power of technology to enhance healthcare deliver
             <i className="fa-light fa-user"></i>
             <h5>Chat</h5>
             <div className="pra">
-              <p>You will also get a facility to chat with our doctor so that you can first discuss your problem with them  </p>
+              <p>You will also get a facility to chat with our doctor with end to end encryption  so that no other person can see your chat  </p>
               <p style={{ textAlign: 'center' }}>
-                <Link to='#' className="button" >Read More</Link>
+                {/* <Link to='#' className="button" >Read More</Link> */}
               </p>
             </div>
           </div>
@@ -225,7 +225,7 @@ At our core, we believe in the power of technology to enhance healthcare deliver
             <div className="pra">
               <p>You also get the service to get the diet chart according to your body mass index </p>
               <p style={{ textAlign: 'center' }}>
-                <Link to="#" className="button" >Read More</Link>
+                {/* <Link to="#" className="button" >Read More</Link> */}
               </p>
             </div>
           </div>
