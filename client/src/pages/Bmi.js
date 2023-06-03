@@ -54,7 +54,7 @@ const BmiCalculator = () => {
               value={weight}
               onChange={(e) => setWeight(e.target.value)}
             />
-            <span>Weight</span>
+            <span>Weight (kgs)</span>
             <i></i>
             </div>
             <div className="inputbox">
@@ -63,7 +63,7 @@ const BmiCalculator = () => {
               value={height}
               onChange={(e) => setHeight(e.target.value)}
             />
-            <span>Height</span>
+            <span>Height (cms)</span>
             <i></i>
             </div>
         </div>
