@@ -254,31 +254,32 @@ const getAllDoctorsController=async(req,res)=>{
         res.status(500).send({success:false,error,message:'Error while fetching doctors'})
     }
 }
-
 const bookAppointmentController = async (req, res) => {
-    try {
-      req.body.date = moment(req.body.date, 'DD-MM-YYYY').toISOString();
-      req.body.time = moment(req.body.time, 'HH:mm').toISOString();
-      req.body.status = 'pending';
-      const newAppointment = new appointmentModel(req.body);
-      await newAppointment.save();
-  
-      const user = await userModel.findOne({ _id: req.body.doctorInfo.userId });
-      if (user && user.notification) {
-        user.notification.push({
-          type: "New-Appointment-request",
-          message: `A new appointment request from ${req.body.userInfo.name}`,
-          onClickPath: "/user/appointments",
-        });
-  
-        await user.save();
-      }
-      res.status(200).send({ success: true, message: 'Appointment Book Successfully' });
-    } catch (error) {
-      console.log(error);
-      res.status(500).send({ message: 'Appointment failed', success: false, error });
+  try {
+    req.body.date = moment(req.body.date, 'DD-MM-YYYY').toISOString();
+    req.body.time = moment(req.body.time, 'HH:mm').toISOString();
+    req.body.status = 'pending';
+
+    const newAppointment = new appointmentModel(req.body);
+    await newAppointment.save();
+
+    const user = await userModel.findOne({ _id: req.body.doctorInfo.userId });
+    if (user && user.notification) {
+      user.notification.push({
+        type: 'New-Appointment-request',
+        message: `A new appointment request from ${req.body.userInfo.name}`,
+        onClickPath: '/user/appointments',
+      });
+      await user.save();
     }
-  };
+
+    res.status(200).json({ success: true, message: 'Appointment booked successfully' });
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ success: false, message: 'Failed to book appointment', error });
+  }
+};
+
   
   const bookingAvailabilityController = async (req, res) => {
     try {

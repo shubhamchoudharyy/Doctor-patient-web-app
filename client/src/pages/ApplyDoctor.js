@@ -14,31 +14,40 @@ const ApplyDoctor = () => {
 
     const handleFinish = async (values) => {
         try {
-            dispatch(showLoading())
-            const res = await axios.post('api/v1/user/apply-doctor', {
-                ...values, userId: user._id, timings: [
-                    moment(values.timings[0]).format('HH:mm'),
-                    moment(values.timings[1]).format('HH:mm'),
-                ]
-            }, {
-                headers: {
-                    Authorization: `Bearer ${localStorage.getItem('token')}`
-                }
-            })
-            dispatch(hideLoading())
-            if (res.data.success) {
-                message.success(res.data.message)
-                navigate('/')
-
-            } else {
-                message.error(res.data.message)
+          dispatch(showLoading());
+      
+          const timings = values.timings.map((time) => moment(time).format('HH:mm'));
+      
+          const res = await axios.post(
+            'api/v1/user/apply-doctor',
+            {
+              ...values,
+              userId: user._id,
+              timings: timings,
+            },
+            {
+              headers: {
+                Authorization: `Bearer ${localStorage.getItem('token')}`,
+              },
             }
+          );
+      
+          dispatch(hideLoading());
+      
+          if (res.data.success) {
+            message.success(res.data.message);
+            navigate('/');
+          } else {
+            message.error(res.data.message);
+          }
         } catch (error) {
-            dispatch(hideLoading())
-            console.log(error)
-            message.error('Something went Wrong')
+          dispatch(hideLoading());
+          console.log(error);
+          message.error('Something went wrong');
         }
-    }
+      };
+      
+    
     return (
 
         <Layout>
